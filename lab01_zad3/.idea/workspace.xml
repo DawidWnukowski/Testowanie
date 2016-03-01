@@ -26,8 +26,8 @@
       <file leaf-file-name="LiczbaRzymska.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LiczbaRzymska.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14814815">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.4814815">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#86#87#0" expanded="true" />
                 <element signature="e#112#113#0" expanded="true" />
@@ -664,7 +664,7 @@
       <updated>1456826926280</updated>
       <workItem from="1456826929616" duration="1579000" />
       <workItem from="1456828560181" duration="337000" />
-      <workItem from="1456828916325" duration="313000" />
+      <workItem from="1456828916325" duration="855000" />
     </task>
     <servers />
   </component>
@@ -701,10 +701,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2229000" />
+    <option name="totallyTimeSpent" value="2771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -746,8 +746,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LiczbaRzymska.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14814815">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.4814815">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#86#87#0" expanded="true" />
             <element signature="e#112#113#0" expanded="true" />

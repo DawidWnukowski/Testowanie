@@ -1,4 +1,7 @@
-public class Calculator
+/**
+ * Created by Vuko on 08.03.2016.
+ */
+public class Calc
 {
     public int add(int a, int b)
     {

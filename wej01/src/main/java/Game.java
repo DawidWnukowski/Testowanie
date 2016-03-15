@@ -9,4 +9,9 @@ public class Game
     {
         this.title = title;
     }
+
+    public String getTitle()
+    {
+        return title;
+    }
 }

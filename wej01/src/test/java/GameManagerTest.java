@@ -29,6 +29,7 @@ public class GameManagerTest {
         gm.add(game);
 
         assertEquals(gm.getAll().size(), 1);
+        assertEquals(gm.getAll().get(0).getTitle(), "Diablo 3");
     }
 
     @Test
@@ -44,5 +45,6 @@ public class GameManagerTest {
         gm.add(game);
 
         assertEquals(gm.getAll().size(), 3);
+        assertEquals(gm.getAll().get(1).getTitle(), "Uncharted");
     }
 }

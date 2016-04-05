@@ -69,8 +69,6 @@ public class Mockito
         verify(msMock).checkConnection(INVALID_SERVER);
     }
 
-
-
     @Test
     public void sendingInvalidReceipient() throws MalformedRecipientException {
 
@@ -82,14 +80,15 @@ public class Mockito
         verify(msMock).send(VALID_SERVER, INVALID_MESSAGE);
     }
 
-  //  @Test
-//    public void sendingConnectionStatus() {
-//
-//        ArgumentCaptor<String> capturedServer = ArgumentCaptor.forClass(String.class);
-//
-//        assertEquals(1, messenger.testConnection(INVALID_SERVER));
-//        assertEquals(INVALID_SERVER, capturedServer.getValue());
-//
-//        verify(msMock).checkConnection(capturedServer.capture());
-//    }
+    @Test
+    public void sendingConnectionStatus() {
+
+        ArgumentCaptor<String> capturedServer = ArgumentCaptor.forClass(String.class);
+
+        when(msMock.checkConnection(capturedServer.capture())).thenReturn(ConnectionStatus.FAILURE);
+        assertEquals(1, messenger.testConnection(INVALID_SERVER));
+        assertEquals(INVALID_SERVER, capturedServer.getValue());
+
+        verify(msMock).checkConnection(INVALID_SERVER);
+    }
 }

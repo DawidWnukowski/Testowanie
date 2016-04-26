@@ -23,6 +23,11 @@ public class Steps {
     @When("user opens Login link and fill input with data")
     public void userClicksOnLink(){
         pages.home().clickLink();
+        try {
+            Thread.sleep(500L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         pages.login().fillData();
     }
  
@@ -34,5 +39,20 @@ public class Steps {
     @Then("login failed")
     public void loginFailed(){
         assertEquals("Błąd logowania", pages.login().getError());
+    }
+
+    @When("user trying to subscribe")
+    public void userSubscribe(){
+        pages.login().Sub();
+        try {
+            Thread.sleep(1500L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Then("subscribe failed")
+    public void subscribeSuccess(){
+        assertEquals("Błąd! Ten email jest już w bazie subskrybentów.", pages.login().getSubSuccess());
     }
 }

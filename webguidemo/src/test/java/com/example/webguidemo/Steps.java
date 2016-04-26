@@ -29,11 +29,17 @@ public class Steps {
             e.printStackTrace();
         }
         pages.login().fillData();
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
  
     @Then("login page is shown")
     public void loginPageIsShown(){
-        assertEquals("Zaloguj się - PS Site Polska", pages.login().getTitle());
+        assertEquals("Zaloguj się - PS Site Polska", pages.login().getTitle()); //Zaloguj się - PS Site Polska         assertEquals("", pages.login().getTitle()); //Zaloguj się - PS Site Polska
+
     }
 
     @Then("login failed")

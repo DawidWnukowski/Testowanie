@@ -10,7 +10,7 @@ public class Login extends WebDriverPage{
 
 	private final static String EMAIL = "//*[@id=\"luser-main\"]";
 	private final static String PW = "//*[@id=\"lpass-main\"]";
-	private final static String BTN = "//*[@title=\"Zaloguj się\"]";
+	private final static String BTN = "//*[@id=\"content\"]/div[1]/div/div/form/div[8]/a";
 	private final static String ERROR = "//*[@id=\"login_komunikat-main\"]/span";
 	private final static String SUB_EMAIL = "//*[@id=\"newsletter-email\"]";
 	private final static String SUB_OK = "//*[@id=\"newsletter-form\"]/input[2]";

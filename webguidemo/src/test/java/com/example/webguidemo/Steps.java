@@ -49,9 +49,14 @@ public class Steps {
 
     @When("user trying to subscribe")
     public void userSubscribe(){
+        try {
+            Thread.sleep(2500L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         pages.login().Sub();
         try {
-            Thread.sleep(1500L);
+            Thread.sleep(2500L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

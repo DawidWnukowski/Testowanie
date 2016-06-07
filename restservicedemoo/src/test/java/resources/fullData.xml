@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <GAME ID="0" TITLE="Bolek" PRICE="1972"/>
+  <GAME ID="1" TITLE="Lolek" PRICE="1972"/>
+  <GAME ID="2" TITLE="Tola" PRICE="1975"/>
+  <GAME ID="3" TITLE="Reksio" PRICE="1975"/>
+
+</dataset>

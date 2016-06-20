@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.RestAssured;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -29,9 +30,14 @@ public class RatingServiceTest {
         RestAssured.basePath = "/restservicedemo/api";
     }
 
+    @Before
+    public void clearDB(){
+        delete("/game/").then().assertThat().statusCode(200);
+        delete("/rating").then().assertThat().statusCode(200);
+    }
+
     @Test
     public void addRating() {
-        delete("/rating").then().assertThat().statusCode(200);
 
         Rating r = new Rating(0, 5, 0);
         given().
@@ -42,10 +48,10 @@ public class RatingServiceTest {
     }
 
     //todo: mozliwe ze przesadzilem z ponizszym testem... ale zostawiam, bo moze jest dobrze :)
+    //+ wiem juz, ze mozna uzywac body(costam), jednak zostawiam mappera,
+    //bo nawet jesli to gorszy sposob to warto znac wiele technik
     @Test
     public void getRatingsByGameId() {
-        delete("/rating").then().assertThat().statusCode(200);
-        delete("/game").then().assertThat().statusCode(200);
 
         int val1 = 5, val2 = 7;
 
@@ -109,7 +115,5 @@ public class RatingServiceTest {
                 body(r).
                 when().
                 post("/rating/add").then().assertThat().statusCode(201);
-
-        delete("/game/").then().assertThat().statusCode(200);
     }
 }

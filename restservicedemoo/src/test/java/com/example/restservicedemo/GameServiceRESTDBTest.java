@@ -59,7 +59,7 @@ public class GameServiceRESTDBTest {
         databaseTester.onTearDown();
     }
     @Test
-    public void addGame() throws Exception{
+    public void addGame() throws Exception {
 
         Game g = new Game(0, "Ziutek", 2010);
         given().contentType(MediaType.APPLICATION_JSON).body(g)

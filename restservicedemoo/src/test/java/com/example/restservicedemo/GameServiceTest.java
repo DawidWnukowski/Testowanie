@@ -8,6 +8,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 import com.example.restservicedemo.domain.Game;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -23,25 +24,41 @@ public class GameServiceTest {
 		RestAssured.port = 8080;
 		RestAssured.basePath = "/restservicedemo/api";
 	}
+
+	@Before
+	public void clearDB(){
+		delete("/game/").then().assertThat().statusCode(200);
+	}
 	
 	@Test
 	public void getGame(){
-		delete("/game/").then().assertThat().statusCode(200);
 
 		Game aGame = new Game(0, "Diablo 2", 50);
 		given().
 				contentType(MediaType.APPLICATION_JSON).
 				body(aGame).
-				when().
-				post("/game/");
+		when().
+				post("/game/").
+		then().
+				assertThat().statusCode(201);
 
+		given().
+				contentType(MediaType.APPLICATION_JSON).
+		when().
+				get("/game/0").
+		then().
+				body("id", equalTo(0)).
+				body("title", equalTo("Diablo 2")).
+				body("price", equalTo(50f)).
+				statusCode(200);
+
+		//drugi sposob :)
 		Game g = get("/game/0").as(Game.class);
 		assertThat(g.getTitle(), is(equalTo("Diablo 2")));
 	}
 	
 	@Test
 	public void addGame(){
-		delete("/game/").then().assertThat().statusCode(200);
 
 		Game aGame = new Game(2, "Diablo 3", 200);
 		given().
@@ -53,6 +70,7 @@ public class GameServiceTest {
 
 	@Test
 	public void removeGames() {
+
 		Game aGame = new Game(1, "Diablo 3", 200);
 		given().
 				contentType(MediaType.APPLICATION_JSON).
@@ -66,8 +84,6 @@ public class GameServiceTest {
 				body(aGame).
 				when().
 				post("/game/add").then().assertThat().statusCode(201);
-
-		delete("/game/").then().assertThat().statusCode(200);
 	}
 
 }

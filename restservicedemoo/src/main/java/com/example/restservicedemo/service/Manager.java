@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Created by Vuko on 26.05.2016.
- */
 public abstract class Manager {
     protected static Connection connection;
 
